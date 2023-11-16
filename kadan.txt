@@ -1,0 +1,25 @@
+Algorithm Kadane
+function kadaneAlgorithm(tableau T: entier): entier
+
+    variable: i: entier
+             current_sum: entier
+             max_sum: entier
+
+debut
+    current_sum <-- 0
+    max_sum <-- 0
+
+    pour i <-- 0 to n - 1 pas 1 faire
+        current_sum <-- current_sum + T(i)
+        
+        si current_sum < 0 alors
+            current_sum <-- 0
+        fin si
+
+        si current_sum > max_sum lors
+            max_sum <-- current_sum
+        fin si
+  fin pour
+
+    Return max_sum
+fin
